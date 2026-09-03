@@ -1,11 +1,11 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>100% Scholarship</title>
+<title>Scholarship Admission Payment</title>
 
 <style>
 /* =========================================================
@@ -19,9 +19,11 @@
 }
 
 :root {
-    --pink: #e2136da8;
-    --pink-dark: #c80f62c5;
+    --pink: #e2136d;
+    --pink-dark: #c80f62;
     --pink-light: #fff2f7;
+    --green: #28b765;
+    --green-light: #eafaf1;
     --text: #171717;
     --muted: #737373;
     --border: #e9e9e9;
@@ -39,7 +41,7 @@ body {
 
     min-height: 100vh;
 
-    background: #f7f7f8;
+    background: var(--background);
 
     color: var(--text);
 
@@ -132,6 +134,64 @@ body {
 
 
 /* =========================================================
+   SCHOLARSHIP NOTICE
+========================================================= */
+
+.scholarship-notice {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 11px;
+
+    background: var(--green-light);
+
+    border: 1px solid rgba(40, 183, 101, 0.16);
+
+    border-radius: 15px;
+
+    padding: 15px 16px;
+
+    margin-bottom: 20px;
+}
+
+.scholarship-icon {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+.scholarship-text {
+    font-size: 12px;
+
+    line-height: 1.55;
+
+    color: #4d6b59;
+}
+
+.scholarship-text strong {
+    color: #1e7e48;
+}
+
+
+/* =========================================================
    PAYMENT SUMMARY
 ========================================================= */
 
@@ -156,7 +216,7 @@ body {
 
     color: #8a8a8a;
 
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .summary-row {
@@ -191,6 +251,32 @@ body {
     font-size: 23px;
 
     font-weight: 800;
+}
+
+.summary-details {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 10px;
+
+    padding-top: 10px;
+
+    border-top: 1px solid rgba(226, 19, 110, 0.10);
+
+    font-size: 11px;
+
+    color: #888;
+}
+
+.free-label {
+    color: var(--green);
+
+    font-weight: 750;
 }
 
 
@@ -326,15 +412,23 @@ body {
 
     font-weight: 700;
 
-    box-shadow: none;
+    cursor: pointer;
+
+    transition: 0.2s ease;
 }
 
 .copy-button:hover {
-    transform: none;
-
     background: var(--pink-light);
 
-    box-shadow: none;
+    transform: none;
+}
+
+.copy-button.copied {
+    color: var(--green);
+
+    border-color: rgba(40, 183, 101, 0.25);
+
+    background: var(--green-light);
 }
 
 
@@ -472,6 +566,8 @@ body {
     font-size: 12px;
 
     color: var(--muted);
+
+    line-height: 1.5;
 }
 
 .form-group {
@@ -490,7 +586,12 @@ body {
     color: #333;
 }
 
-.input {
+.required {
+    color: var(--pink);
+}
+
+.input,
+.select-input {
     width: 100%;
 
     height: 49px;
@@ -520,11 +621,57 @@ body {
     color: #aaa;
 }
 
-.input:focus {
+.input:focus,
+.select-input:focus {
     border-color: var(--pink);
 
     box-shadow:
         0 0 0 4px rgba(226, 19, 110, 0.08);
+}
+
+.select-input {
+    cursor: pointer;
+
+    appearance: auto;
+}
+
+
+/* =========================================================
+   COURSE PRICE INFO
+========================================================= */
+
+.course-info {
+    display: none;
+
+    margin-top: 8px;
+
+    padding: 10px 12px;
+
+    border-radius: 10px;
+
+    background: #fafafa;
+
+    border: 1px solid var(--border);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    color: #777;
+}
+
+.course-info.show {
+    display: block;
+}
+
+.course-info strong {
+    color: #333;
+}
+
+.course-free {
+    color: var(--green);
+
+    font-weight: 750;
 }
 
 
@@ -745,7 +892,7 @@ body {
 
     border-radius: 50%;
 
-    background: #eafaf1;
+    background: var(--green-light);
 
     animation: pop 0.4s ease;
 }
@@ -756,7 +903,7 @@ body {
 
     fill: none;
 
-    stroke: #28b765;
+    stroke: var(--green);
 
     stroke-width: 4;
 
@@ -779,6 +926,34 @@ body {
     color: #222;
 
     margin-bottom: 10px;
+}
+
+.success-name {
+    font-size: 16px;
+
+    font-weight: 750;
+
+    color: var(--pink);
+
+    margin-bottom: 12px;
+}
+
+.success-course {
+    display: inline-block;
+
+    padding: 8px 13px;
+
+    margin-bottom: 16px;
+
+    border-radius: 9px;
+
+    background: var(--pink-light);
+
+    color: #555;
+
+    font-size: 12px;
+
+    font-weight: 650;
 }
 
 .success-text {
@@ -859,6 +1034,10 @@ body {
 
     .content {
         padding: 20px 17px 22px;
+    }
+
+    .scholarship-notice {
+        padding: 13px;
     }
 
     .payment-summary {
@@ -967,7 +1146,7 @@ body {
             </div>
 
             <div class="header-subtitle">
-               Complete Your Payment
+                Complete Your Admission Payment
             </div>
 
         </header>
@@ -978,6 +1157,29 @@ body {
         ================================================== -->
 
         <main class="content">
+
+
+            <!-- SCHOLARSHIP NOTICE -->
+
+            <div class="scholarship-notice">
+
+                <div class="scholarship-icon">
+                    ✓
+                </div>
+
+                <div class="scholarship-text">
+
+                    <strong>Congratulations on your 100% scholarship!</strong>
+
+                    Your selected course is completely free.
+                    You only need to pay the
+                    <strong>৳1,099 admission fee</strong>
+                    to complete your enrollment.
+
+                </div>
+
+            </div>
+
 
             <!-- PAYMENT SUMMARY -->
 
@@ -993,7 +1195,7 @@ body {
                         class="summary-course"
                         id="courseName"
                     >
-                       Admission Fee
+                        Select a course
                     </div>
 
                     <div class="summary-price">
@@ -1002,10 +1204,25 @@ body {
 
                 </div>
 
+                <div class="summary-details">
+
+                    <span>
+                        Course Fee:
+                        <strong id="originalPrice">—</strong>
+                    </span>
+
+                    <span class="free-label">
+                        100% SCHOLARSHIP
+                    </span>
+
+                </div>
+
             </div>
 
 
-            <!-- QR CODE -->
+            <!-- =================================================
+                 QR CODE
+            ================================================== -->
 
             <section class="qr-section">
 
@@ -1027,13 +1244,15 @@ body {
                 </div>
 
                 <div class="qr-note">
-                    Use bKash to complete the payment
+                    Pay only ৳1,099 as the admission fee
                 </div>
 
             </section>
 
 
-            <!-- bKASH NUMBER -->
+            <!-- =================================================
+                 bKASH NUMBER
+            ================================================== -->
 
             <div class="number-box">
 
@@ -1043,7 +1262,10 @@ body {
                         SEND MONEY TO
                     </span>
 
-                    <div class="number">
+                    <div
+                        class="number"
+                        id="bkashPaymentNumber"
+                    >
                         01961398298
                     </div>
 
@@ -1060,7 +1282,9 @@ body {
             </div>
 
 
-            <!-- INSTRUCTIONS -->
+            <!-- =================================================
+                 INSTRUCTIONS
+            ================================================== -->
 
             <section class="instructions">
 
@@ -1161,7 +1385,9 @@ body {
             <div class="divider"></div>
 
 
-            <!-- FORM -->
+            <!-- =================================================
+                 FORM
+            ================================================== -->
 
             <section>
 
@@ -1172,7 +1398,7 @@ body {
                     </h2>
 
                     <p>
-                        Submit your payment details below.
+                        Enter your information and payment details below.
                     </p>
 
                 </div>
@@ -1180,7 +1406,165 @@ body {
 
                 <form id="paymentForm">
 
-                    <!-- bKASH NUMBER -->
+
+                    <!-- =================================================
+                         NAME
+                    ================================================== -->
+
+                    <div class="form-group">
+
+                        <label
+                            class="form-label"
+                            for="candidateName"
+                        >
+                            Your Name <span class="required">*</span>
+                        </label>
+
+                        <input
+                            class="input"
+                            type="text"
+                            id="candidateName"
+                            name="candidateName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- =================================================
+                         COURSE
+                    ================================================== -->
+
+                    <div class="form-group">
+
+                        <label
+                            class="form-label"
+                            for="courseSelect"
+                        >
+                            Select Your Course <span class="required">*</span>
+                        </label>
+
+                        <select
+                            class="select-input"
+                            id="courseSelect"
+                            name="course"
+                            required
+                        >
+
+                            <option value="" selected disabled>
+                                Choose your course
+                            </option>
+
+                            <option
+                                value="Web Development"
+                                data-price="9999"
+                            >
+                                Web Development — ৳9,999
+                            </option>
+
+                            <option
+                                value="Graphics Design"
+                                data-price="7999"
+                            >
+                                Graphics Design — ৳7,999
+                            </option>
+
+                            <option
+                                value="Digital Marketing"
+                                data-price="8999"
+                            >
+                                Digital Marketing — ৳8,999
+                            </option>
+
+                            <option
+                                value="UI/UX Design"
+                                data-price="6999"
+                            >
+                                UI/UX Design — ৳6,999
+                            </option>
+
+                            <option
+                                value="Video Editing"
+                                data-price="5999"
+                            >
+                                Video Editing — ৳5,999
+                            </option>
+
+                            <option
+                                value="Motion Graphics"
+                                data-price="6499"
+                            >
+                                Motion Graphics — ৳6,499
+                            </option>
+
+                            <option
+                                value="SEO"
+                                data-price="4999"
+                            >
+                                SEO — ৳4,999
+                            </option>
+
+                            <option
+                                value="WordPress"
+                                data-price="5499"
+                            >
+                                WordPress — ৳5,499
+                            </option>
+
+                            <option
+                                value="AI Tools"
+                                data-price="6999"
+                            >
+                                AI Tools — ৳6,999
+                            </option>
+
+                            <option
+                                value="Freelancing Masterclass"
+                                data-price="4499"
+                            >
+                                Freelancing Masterclass — ৳4,499
+                            </option>
+
+                            <option
+                                value="Content Writing"
+                                data-price="3999"
+                            >
+                                Content Writing — ৳3,999
+                            </option>
+
+                        </select>
+
+
+                        <div
+                            class="course-info"
+                            id="courseInfo"
+                        >
+
+                            Regular course fee:
+                            <strong id="courseRegularPrice">৳0</strong>
+
+                            <br>
+
+                            Scholarship:
+                            <span class="course-free">
+                                100% OFF — Course Free
+                            </span>
+
+                            <br>
+
+                            Admission fee payable:
+                            <strong>৳1,099</strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         BKASH NUMBER
+                    ================================================== -->
 
                     <div class="form-group">
 
@@ -1188,7 +1572,7 @@ body {
                             class="form-label"
                             for="bkashNumber"
                         >
-                            Your bKash Number
+                            Your bKash Number <span class="required">*</span>
                         </label>
 
                         <input
@@ -1207,7 +1591,9 @@ body {
                     </div>
 
 
-                    <!-- TRANSACTION ID -->
+                    <!-- =================================================
+                         TRANSACTION ID
+                    ================================================== -->
 
                     <div class="form-group">
 
@@ -1215,7 +1601,7 @@ body {
                             class="form-label"
                             for="transactionId"
                         >
-                            Transaction ID
+                            Transaction ID <span class="required">*</span>
                         </label>
 
                         <input
@@ -1231,7 +1617,9 @@ body {
                     </div>
 
 
-                    <!-- PAYMENT PROOF -->
+                    <!-- =================================================
+                         PAYMENT PROOF
+                    ================================================== -->
 
                     <div class="form-group">
 
@@ -1239,7 +1627,7 @@ body {
                             class="form-label"
                             for="paymentProof"
                         >
-                            Payment Screenshot
+                            Payment Screenshot <span class="required">*</span>
                         </label>
 
                         <input
@@ -1254,7 +1642,9 @@ body {
                     </div>
 
 
-                    <!-- SUBMIT -->
+                    <!-- =================================================
+                         SUBMIT
+                    ================================================== -->
 
                     <button
                         type="submit"
@@ -1337,16 +1727,36 @@ body {
             </div>
 
 
+            <div
+                class="success-name"
+                id="successCandidateName"
+            >
+                Thank you!
+            </div>
+
+
+            <div
+                class="success-course"
+                id="successCourse"
+            >
+                Course
+            </div>
+
+
             <div class="success-text">
 
                 We're confirming your payment.
 
                 <br><br>
 
-        
+                Once your payment has been verified,
+                you'll receive your class schedule via
+                <strong>WhatsApp message</strong>.
 
-Once your payment has been verified, you'll receive your class schedule via WhatsApp message.
+                <br><br>
 
+                Please keep your phone available for the
+                class schedule and enrollment confirmation.
 
             </div>
 
@@ -1359,44 +1769,329 @@ Once your payment has been verified, you'll receive your class schedule via What
 
 
 <script>
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const paymentForm = document.getElementById('paymentForm');
+
+const submitButton = document.getElementById('submitButton');
+
+const successScreen = document.getElementById('successScreen');
+
+const loader = document.getElementById('loader');
+
+const successContent = document.getElementById('successContent');
+
+const candidateNameInput =
+    document.getElementById('candidateName');
+
+const courseSelect =
+    document.getElementById('courseSelect');
+
+const courseName =
+    document.getElementById('courseName');
+
+const originalPrice =
+    document.getElementById('originalPrice');
+
+const courseInfo =
+    document.getElementById('courseInfo');
+
+const courseRegularPrice =
+    document.getElementById('courseRegularPrice');
+
+const instructionAmount =
+    document.getElementById('instructionAmount');
+
+const paymentAmount =
+    document.getElementById('paymentAmount');
+
+const copyButton =
+    document.getElementById('copyButton');
+
+const bkashPaymentNumber =
+    document.getElementById('bkashPaymentNumber');
+
+const successCandidateName =
+    document.getElementById('successCandidateName');
+
+const successCourse =
+    document.getElementById('successCourse');
+
+
+/* =========================================================
+   COURSE SELECTION
+========================================================= */
+
+courseSelect.addEventListener('change', function () {
+
+    const selectedOption =
+        courseSelect.options[courseSelect.selectedIndex];
+
+    const selectedCourse =
+        selectedOption.value;
+
+    const selectedPrice =
+        selectedOption.getAttribute('data-price');
+
+    if (!selectedCourse) {
+        return;
+    }
+
+    /*
+       The student has a 100% scholarship,
+       therefore the actual payable amount
+       remains 1099 BDT regardless of course.
+    */
+
+    courseName.textContent =
+        selectedCourse;
+
+    originalPrice.textContent =
+        '৳' + Number(selectedPrice).toLocaleString('en-BD');
+
+    courseRegularPrice.textContent =
+        '৳' + Number(selectedPrice).toLocaleString('en-BD');
+
+    paymentAmount.textContent =
+        '1099';
+
+    instructionAmount.textContent =
+        '1099';
+
+    courseInfo.classList.add('show');
+
+});
+
+
+/* =========================================================
+   COPY BKASH NUMBER
+========================================================= */
+
+copyButton.addEventListener('click', async function () {
+
+    const number =
+        bkashPaymentNumber.textContent.trim();
+
+    try {
+
+        /*
+           Modern browsers
+        */
+
+        if (
+            navigator.clipboard &&
+            window.isSecureContext
+        ) {
+
+            await navigator.clipboard.writeText(number);
+
+        } else {
+
+            /*
+               Fallback for HTTP / older browsers
+            */
+
+            const temporaryInput =
+                document.createElement('input');
+
+            temporaryInput.value = number;
+
+            temporaryInput.style.position =
+                'fixed';
+
+            temporaryInput.style.opacity =
+                '0';
+
+            document.body.appendChild(
+                temporaryInput
+            );
+
+            temporaryInput.focus();
+
+            temporaryInput.select();
+
+            temporaryInput.setSelectionRange(
+                0,
+                temporaryInput.value.length
+            );
+
+            document.execCommand('copy');
+
+            document.body.removeChild(
+                temporaryInput
+            );
+        }
+
+        copyButton.textContent =
+            'Copied!';
+
+        copyButton.classList.add(
+            'copied'
+        );
+
+        setTimeout(function () {
+
+            copyButton.textContent =
+                'Copy Number';
+
+            copyButton.classList.remove(
+                'copied'
+            );
+
+        }, 2000);
+
+    } catch (error) {
+
+        /*
+           Final fallback:
+           select the number so the user can
+           manually copy it.
+        */
+
+        const temporaryInput =
+            document.createElement('input');
+
+        temporaryInput.value = number;
+
+        document.body.appendChild(
+            temporaryInput
+        );
+
+        temporaryInput.select();
+
+        temporaryInput.setSelectionRange(
+            0,
+            temporaryInput.value.length
+        );
+
+        copyButton.textContent =
+            'Select & Copy';
+
+        setTimeout(function () {
+
+            document.body.removeChild(
+                temporaryInput
+            );
+
+            copyButton.textContent =
+                'Copy Number';
+
+        }, 2500);
+
+    }
+
+});
+
+
 /* =========================================================
    PAYMENT FORM SUBMISSION
 ========================================================= */
 
-const paymentForm = document.getElementById('paymentForm');
-const submitButton = document.getElementById('submitButton');
-const successScreen = document.getElementById('successScreen');
-const loader = document.getElementById('loader');
-const successContent = document.getElementById('successContent');
+paymentForm.addEventListener(
+    'submit',
+    function (event) {
 
-paymentForm.addEventListener('submit', function (event) {
-    // Prevent the browser from reloading the page.
-    event.preventDefault();
+        event.preventDefault();
 
-    // Let the browser's built-in validation handle required fields/patterns.
-    if (!paymentForm.checkValidity()) {
-        paymentForm.reportValidity();
-        return;
+        /*
+           Let browser validation handle:
+           - required fields
+           - bKash number format
+           - course selection
+        */
+
+        if (!paymentForm.checkValidity()) {
+
+            paymentForm.reportValidity();
+
+            return;
+        }
+
+
+        /* =====================================================
+           GET CANDIDATE INFORMATION
+        ===================================================== */
+
+        const candidateName =
+            candidateNameInput.value.trim();
+
+        const selectedCourse =
+            courseSelect.value;
+
+
+        /*
+           Extra safety check for course
+        */
+
+        if (!selectedCourse) {
+
+            courseSelect.focus();
+
+            return;
+        }
+
+
+        /* =====================================================
+           PREPARE SUCCESS SCREEN
+        ===================================================== */
+
+        successCandidateName.textContent =
+            'Thank you, ' + candidateName + '!';
+
+        successCourse.textContent =
+            selectedCourse +
+            ' • 100% Scholarship';
+
+
+        /* =====================================================
+           PREVENT DOUBLE SUBMISSION
+        ===================================================== */
+
+        submitButton.disabled = true;
+
+        submitButton.textContent =
+            'Submitting...';
+
+
+        /* =====================================================
+           SHOW PROCESSING SCREEN
+        ===================================================== */
+
+        successScreen.style.display =
+            'flex';
+
+        loader.style.display =
+            'block';
+
+        successContent.style.display =
+            'none';
+
+        document.body.style.overflow =
+            'hidden';
+
+
+        /* =====================================================
+           PROCESSING DELAY
+        ===================================================== */
+
+        setTimeout(function () {
+
+            loader.style.display =
+                'none';
+
+            successContent.style.display =
+                'block';
+
+        }, 1200);
+
     }
+);
 
-    // Prevent accidental double submissions.
-    submitButton.disabled = true;
-    submitButton.textContent = 'Submitting...';
-
-    // Show the full-screen processing state.
-    successScreen.style.display = 'flex';
-    loader.style.display = 'block';
-    successContent.style.display = 'none';
-    document.body.style.overflow = 'hidden';
-
-    // Brief processing state, then reveal the success message.
-    setTimeout(function () {
-        loader.style.display = 'none';
-        successContent.style.display = 'block';
-    }, 1200);
-});
 </script>
 
 </body>
 </html>
-
+```
