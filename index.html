@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Scholarship Admission Payment</title>
+<title>স্কলারশিপ ভর্তি পেমেন্ট</title>
 
 <style>
 /* =========================================================
@@ -191,7 +191,7 @@ body {
 
 
 /* =========================================================
-   PAYMENT SUMMARY
+   পেমেন্টের সারসংক্ষেপ
 ========================================================= */
 
 .payment-summary {
@@ -1118,6 +1118,101 @@ body {
         width: 100%;
     }
 }
+
+/* Responsive enhancements — preserves the existing visual design */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+button,
+input,
+select {
+    max-width: 100%;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding-left: max(10px, env(safe-area-inset-left));
+        padding-right: max(10px, env(safe-area-inset-right));
+        padding-top: max(10px, env(safe-area-inset-top));
+        padding-bottom: max(10px, env(safe-area-inset-bottom));
+    }
+
+    .page,
+    .payment-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .summary-row,
+    .summary-details,
+    .number-box {
+        min-width: 0;
+    }
+
+    .summary-course,
+    .number,
+    .section-description,
+    .scholarship-text,
+    .steps li,
+    .form-heading p,
+    .success-text {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .input,
+    .select-input,
+    .file-input,
+    .submit-button {
+        font-size: 16px; /* avoids iOS Safari auto-zoom */
+    }
+
+    .submit-button,
+    .copy-button {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+}
+
+@media (max-width: 360px) {
+    .header-title {
+        font-size: 18px;
+    }
+
+    .content {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    .scholarship-text,
+    .steps li {
+        font-size: 12px;
+    }
+
+    .section-description {
+        font-size: 12px;
+    }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+    body {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .success-card {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
 </style>
 </head>
 
@@ -1141,11 +1236,11 @@ body {
             >
 
             <div class="header-title">
-                100% Scholarship
+                ১০০% স্কলারশিপ
             </div>
 
             <div class="header-subtitle">
-                Complete Your Admission Payment
+                আপনার ভর্তি পেমেন্ট সম্পন্ন করুন
             </div>
 
         </header>
@@ -1168,24 +1263,24 @@ body {
 
                 <div class="scholarship-text">
 
-                    <strong>Congratulations on your 100% scholarship!</strong>
+                    <strong>আপনার ১০০% স্কলারশিপের জন্য অভিনন্দন!</strong>
 
-                    Your selected course is completely free.
-                    You only need to pay the
-                    <strong>৳1,099 admission fee</strong>
-                    to complete your enrollment.
+                    আপনার নির্বাচিত কোর্সটি সম্পূর্ণ বিনামূল্যে।
+                    আপনাকে শুধুমাত্র
+                    <strong>৳১,০৯৯ ভর্তি ফি</strong>
+                    পরিশোধ করে ভর্তি প্রক্রিয়া সম্পন্ন করতে হবে।
 
                 </div>
 
             </div>
 
 
-            <!-- PAYMENT SUMMARY -->
+            <!-- পেমেন্টের সারসংক্ষেপ -->
 
             <div class="payment-summary">
 
                 <span class="summary-label">
-                    PAYMENT SUMMARY
+                    পেমেন্টের সারসংক্ষেপ
                 </span>
 
                 <div class="summary-row">
@@ -1194,7 +1289,7 @@ body {
                         class="summary-course"
                         id="courseName"
                     >
-                        Select a course
+                        একটি কোর্স নির্বাচন করুন
                     </div>
 
                     <div class="summary-price">
@@ -1206,12 +1301,12 @@ body {
                 <div class="summary-details">
 
                     <span>
-                        Course Fee:
+                        কোর্স ফি:
                         <strong id="originalPrice">—</strong>
                     </span>
 
                     <span class="free-label">
-                        100% SCHOLARSHIP
+                        ১০০% স্কলারশিপ
                     </span>
 
                 </div>
@@ -1226,11 +1321,11 @@ body {
             <section class="qr-section">
 
                 <div class="section-title">
-                    Scan to Pay
+                    পেমেন্ট করতে স্ক্যান করুন
                 </div>
 
                 <div class="section-description">
-                    Scan this QR code with your bKash app
+                    আপনার bKash অ্যাপ দিয়ে এই QR কোডটি স্ক্যান করুন
                 </div>
 
                 <div class="qr-container">
@@ -1243,7 +1338,7 @@ body {
                 </div>
 
                 <div class="qr-note">
-                    Pay only ৳1,099 as the admission fee
+                    ভর্তি ফি হিসেবে শুধুমাত্র ৳১,০৯৯ পেমেন্ট করুন
                 </div>
 
             </section>
@@ -1258,7 +1353,7 @@ body {
                 <div class="number-info">
 
                     <span class="number-label">
-                        SEND MONEY TO
+                        যে নম্বরে টাকা পাঠাবেন
                     </span>
 
                     <div
@@ -1275,7 +1370,7 @@ body {
                     class="copy-button"
                     id="copyButton"
                 >
-                    Copy Number
+                    নম্বর কপি করুন
                 </button>
 
             </div>
@@ -1294,7 +1389,7 @@ body {
                     </div>
 
                     <div class="instructions-title">
-                        How to make the payment
+                        কীভাবে পেমেন্ট করবেন
                     </div>
 
                 </div>
@@ -1309,7 +1404,7 @@ body {
                         </span>
 
                         <span>
-                            Open your <strong>bKash</strong> app.
+                            আপনার <strong>bKash</strong> অ্যাপটি খুলুন।
                         </span>
 
                     </li>
@@ -1322,7 +1417,7 @@ body {
                         </span>
 
                         <span>
-                            Select <strong>Send Money</strong>.
+                            <strong>Send Money</strong> নির্বাচন করুন।
                         </span>
 
                     </li>
@@ -1357,7 +1452,7 @@ body {
                                 </span>
                                 BDT
                             </strong>
-                            as the amount.
+                            টাকার পরিমাণ হিসেবে দিন।
                         </span>
 
                     </li>
@@ -1370,8 +1465,8 @@ body {
                         </span>
 
                         <span>
-                            Complete the payment and save your
-                            <strong>Transaction ID</strong>.
+                            পেমেন্ট সম্পন্ন করে আপনার
+                            <strong>Transaction ID</strong> সংরক্ষণ করুন।
                         </span>
 
                     </li>
@@ -1393,11 +1488,11 @@ body {
                 <div class="form-heading">
 
                     <h2>
-                        Confirm Your Payment
+                        আপনার পেমেন্ট নিশ্চিত করুন
                     </h2>
 
                     <p>
-                        Enter your information and payment details below.
+                        নিচে আপনার তথ্য ও পেমেন্টের বিস্তারিত তথ্য দিন।
                     </p>
 
                 </div>
@@ -1416,7 +1511,7 @@ body {
                             class="form-label"
                             for="candidateName"
                         >
-                            Your Name <span class="required">*</span>
+                            আপনার নাম <span class="required">*</span>
                         </label>
 
                         <input
@@ -1424,7 +1519,7 @@ body {
                             type="text"
                             id="candidateName"
                             name="candidateName"
-                            placeholder="Enter your full name"
+                            placeholder="আপনার পূর্ণ নাম লিখুন"
                             autocomplete="name"
                             required
                         >
@@ -1442,7 +1537,7 @@ body {
                             class="form-label"
                             for="courseSelect"
                         >
-                            Select Your Course <span class="required">*</span>
+                            আপনার কোর্স নির্বাচন করুন <span class="required">*</span>
                         </label>
 
                         <select
@@ -1453,84 +1548,84 @@ body {
                         >
 
                             <option value="" selected disabled>
-                                Choose your course
+                                আপনার কোর্স নির্বাচন করুন
                             </option>
 
                             <option
                                 value="Web Development"
                                 data-price="9999"
                             >
-                                Web Development — ৳9,999
+                                Web Development — ৳৯,৯৯৯
                             </option>
 
                             <option
                                 value="Graphics Design"
                                 data-price="7999"
                             >
-                                Graphics Design — ৳7,999
+                                Graphics Design — ৳৭,৯৯৯
                             </option>
 
                             <option
                                 value="Digital Marketing"
                                 data-price="8999"
                             >
-                                Digital Marketing — ৳8,999
+                                Digital Marketing — ৳৮,৯৯৯
                             </option>
 
                             <option
                                 value="UI/UX Design"
                                 data-price="6999"
                             >
-                                UI/UX Design — ৳6,999
+                                UI/UX Design — ৳৬,৯৯৯
                             </option>
 
                             <option
                                 value="Video Editing"
                                 data-price="5999"
                             >
-                                Video Editing — ৳5,999
+                                Video Editing — ৳৫,৯৯৯
                             </option>
 
                             <option
                                 value="Motion Graphics"
                                 data-price="6499"
                             >
-                                Motion Graphics — ৳6,499
+                                Motion Graphics — ৳৬,৪৯৯
                             </option>
 
                             <option
                                 value="SEO"
                                 data-price="4999"
                             >
-                                SEO — ৳4,999
+                                SEO — ৳৪,৯৯৯
                             </option>
 
                             <option
                                 value="WordPress"
                                 data-price="5499"
                             >
-                                WordPress — ৳5,499
+                                WordPress — ৳৫,৪৯৯
                             </option>
 
                             <option
                                 value="AI Tools"
                                 data-price="6999"
                             >
-                                AI Tools — ৳6,999
+                                AI Tools — ৳৬,৯৯৯
                             </option>
 
                             <option
                                 value="Freelancing Masterclass"
                                 data-price="4499"
                             >
-                                Freelancing Masterclass — ৳4,499
+                                Freelancing Masterclass — ৳৪,৪৯৯
                             </option>
 
                             <option
                                 value="Content Writing"
                                 data-price="3999"
                             >
-                                Content Writing — ৳3,999
+                                Content Writing — ৳৩,৯৯৯
                             </option>
 
                         </select>
@@ -1541,20 +1636,20 @@ body {
                             id="courseInfo"
                         >
 
-                            Regular course fee:
+                            নিয়মিত কোর্স ফি:
                             <strong id="courseRegularPrice">৳0</strong>
 
                             <br>
 
                             Scholarship:
                             <span class="course-free">
-                                100% OFF — Course Free
+                                ১০০% ছাড় — কোর্স ফ্রি
                             </span>
 
                             <br>
 
-                            Admission fee payable:
-                            <strong>৳1,099</strong>
+                            প্রদেয় ভর্তি ফি:
+                            <strong>৳১,০৯৯</strong>
 
                         </div>
 
@@ -1571,7 +1666,7 @@ body {
                             class="form-label"
                             for="bkashNumber"
                         >
-                            Your bKash Number <span class="required">*</span>
+                            আপনার bKash নম্বর <span class="required">*</span>
                         </label>
 
                         <input
@@ -1608,7 +1703,7 @@ body {
                             type="text"
                             id="transactionId"
                             name="transactionId"
-                            placeholder="Enter your Transaction ID"
+                            placeholder="আপনার Transaction ID লিখুন"
                             autocomplete="off"
                             required
                         >
@@ -1626,7 +1721,7 @@ body {
                             class="form-label"
                             for="paymentProof"
                         >
-                            Payment Screenshot <span class="required">*</span>
+                            পেমেন্টের স্ক্রিনশট <span class="required">*</span>
                         </label>
 
                         <input
@@ -1650,14 +1745,14 @@ body {
                         class="submit-button"
                         id="submitButton"
                     >
-                        Submit Payment
+                        পেমেন্ট জমা দিন
                     </button>
 
                 </form>
 
 
                 <div class="security-note">
-                    Your payment information will be reviewed before confirmation.
+                    নিশ্চিত করার আগে আপনার পেমেন্টের তথ্য যাচাই করা হবে।
                 </div>
 
             </section>
@@ -1687,11 +1782,11 @@ body {
             <div class="loader"></div>
 
             <div class="loading-title">
-                Processing your submission
+                আপনার তথ্য জমা দেওয়া হচ্ছে
             </div>
 
             <div class="loading-text">
-                Please wait a moment...
+                অনুগ্রহ করে কিছুক্ষণ অপেক্ষা করুন...
             </div>
 
         </div>
@@ -1722,7 +1817,7 @@ body {
 
 
             <div class="success-title">
-                Payment Submitted Successfully
+                পেমেন্ট সফলভাবে জমা হয়েছে
             </div>
 
 
@@ -1730,7 +1825,7 @@ body {
                 class="success-name"
                 id="successCandidateName"
             >
-                Thank you!
+                ধন্যবাদ!
             </div>
 
 
@@ -1744,18 +1839,18 @@ body {
 
             <div class="success-text">
 
-                We're confirming your payment.
+                আমরা আপনার পেমেন্ট যাচাই করছি।
 
                 <br><br>
 
-                Once your payment has been verified,
-                you'll receive your class schedule via
-                <strong>WhatsApp message</strong>.
+                আপনার পেমেন্ট যাচাই হয়ে গেলে,
+                আপনি আপনার ক্লাসের সময়সূচি পাবেন
+                <strong>WhatsApp মেসেজের মাধ্যমে</strong>।
 
                 <br><br>
 
-                Please keep your phone available for the
-                class schedule and enrollment confirmation.
+                ক্লাসের সময়সূচি ও ভর্তি নিশ্চিতকরণের জন্য
+                আপনার ফোনটি সচল ও কাছে রাখুন।
 
             </div>
 
@@ -1925,7 +2020,7 @@ copyButton.addEventListener('click', async function () {
         }
 
         copyButton.textContent =
-            'Copied!';
+            'কপি হয়েছে!';
 
         copyButton.classList.add(
             'copied'
@@ -1934,7 +2029,7 @@ copyButton.addEventListener('click', async function () {
         setTimeout(function () {
 
             copyButton.textContent =
-                'Copy Number';
+                'নম্বর কপি করুন';
 
             copyButton.classList.remove(
                 'copied'
@@ -1967,7 +2062,7 @@ copyButton.addEventListener('click', async function () {
         );
 
         copyButton.textContent =
-            'Select & Copy';
+            'সিলেক্ট ও কপি করুন';
 
         setTimeout(function () {
 
@@ -1976,7 +2071,7 @@ copyButton.addEventListener('click', async function () {
             );
 
             copyButton.textContent =
-                'Copy Number';
+                'নম্বর কপি করুন';
 
         }, 2500);
 
@@ -2042,7 +2137,7 @@ paymentForm.addEventListener(
 
         successCourse.textContent =
             selectedCourse +
-            ' • 100% Scholarship';
+            ' • ১০০% স্কলারশিপ';
 
 
         /* =====================================================
@@ -2052,7 +2147,7 @@ paymentForm.addEventListener(
         submitButton.disabled = true;
 
         submitButton.textContent =
-            'Submitting...';
+            'জমা দেওয়া হচ্ছে...';
 
 
         /* =====================================================
